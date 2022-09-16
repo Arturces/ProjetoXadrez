@@ -1,14 +1,15 @@
 package aplicacao;
 
-import tabuleiro.Posicao;
+
+import jogotabuleiro.Tabuleiro;
 
 public class Programa {
 
     public static void main(String[] args) {
 
-        Posicao pos = new Posicao(3, 5);
+        Tabuleiro tabuleiro = new Tabuleiro(8, 9);
 
-        System.out.println(pos);
+        System.out.println(tabuleiro);
 
     }
 }
