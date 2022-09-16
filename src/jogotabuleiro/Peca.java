@@ -1,11 +1,11 @@
 package jogotabuleiro;
 
-public class Pecas {
+public class Peca {
 
     protected Posicao posicao;
     private Tabuleiro tabuleiro;
 
-    public Pecas(Tabuleiro tabuleiro) {
+    public Peca(Tabuleiro tabuleiro) {
         this.tabuleiro = tabuleiro;
         posicao =  null;
     }
