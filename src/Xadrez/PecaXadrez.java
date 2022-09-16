@@ -3,10 +3,10 @@ package Xadrez;
 import jogotabuleiro.Pecas;
 import jogotabuleiro.Tabuleiro;
 
-public class PecasXadrez extends Pecas {
+public class PecaXadrez extends Pecas {
     private Cor cor;
 
-    public PecasXadrez(Tabuleiro tabuleiro, Cor cor) {
+    public PecaXadrez(Tabuleiro tabuleiro, Cor cor) {
         super(tabuleiro);
         this.cor = cor;
     }
