@@ -2,6 +2,7 @@ package Xadrez;
 
 import PecasXadrez.Rei;
 import PecasXadrez.Torre;
+import jogotabuleiro.Peca;
 import jogotabuleiro.Posicao;
 import jogotabuleiro.Tabuleiro;
 
@@ -11,7 +12,7 @@ public class PartidaXadrez {
 
     private Tabuleiro tabuleiro;
 
-    public PartidaXadrez(){
+    public PartidaXadrez() {
         tabuleiro = new Tabuleiro(8, 8);
         configuracaoInicia();
     }
@@ -25,25 +26,46 @@ public class PartidaXadrez {
         }
         return mat; //retono da matriz de peças da matriz de xadrez.
     }
-        private void colocarPeca(char coluna, int linha, PecaXadrez peca){
-        tabuleiro.colocarPeca(peca,new PosicaoXadrez(coluna, linha).posicionar());
+
+    public PecaXadrez moverPeca(PosicaoXadrez origemPosicao, PosicaoXadrez destinoPosicao) {
+        Posicao origem = origemPosicao.posicionar();
+        Posicao destino = destinoPosicao.posicionar();
+        validarOrigemPosicao(origem);
+        Peca capturarPeca = fazerMovimento(origem, destino);
+        return (PecaXadrez) capturarPeca;
+    }
+
+    private Peca fazerMovimento(Posicao origem, Posicao destino) {
+        Peca p = tabuleiro.removerPeca(origem);
+        Peca capturarPeca = tabuleiro.removerPeca(destino);
+        tabuleiro.colocarPeca(p, destino);
+        return capturarPeca;
+    }
+
+    private void validarOrigemPosicao(Posicao posicao) {
+        if (!tabuleiro.existePeca(posicao)) {
+            throw new ExcecaoXadrez("Não existe peca na posição de origem");
         }
+    }
 
+    private void colocarPeca(char coluna, int linha, PecaXadrez peca) {
+        tabuleiro.colocarPeca(peca, new PosicaoXadrez(coluna, linha).posicionar());
+    }
 
-    private void configuracaoInicia(){
-        colocarPeca('b', 2, new Torre(tabuleiro,Cor.BRANCO));
-        colocarPeca('e', 1, new Rei(tabuleiro,Cor.BRANCO));
-        colocarPeca('a', 3, new Rei(tabuleiro,Cor.PRETO));
-        colocarPeca('c', 2, new Torre(tabuleiro,Cor.BRANCO));
-        colocarPeca('d', 1, new Rei(tabuleiro,Cor.BRANCO));
-        colocarPeca('f', 5, new Torre(tabuleiro,Cor.PRETO));
-        colocarPeca('g', 4, new Rei(tabuleiro,Cor.BRANCO));
-        colocarPeca('a', 2, new Torre(tabuleiro,Cor.PRETO));
-        colocarPeca('b', 7, new Rei(tabuleiro,Cor.BRANCO));
-        colocarPeca('c', 8, new Torre(tabuleiro,Cor.BRANCO));
-        colocarPeca('d', 2, new Torre(tabuleiro,Cor.PRETO));
-        colocarPeca('d', 4, new Rei(tabuleiro,Cor.PRETO));
+    private void configuracaoInicia() {
+        colocarPeca('b', 2, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('a', 3, new Rei(tabuleiro, Cor.PRETO));
+        colocarPeca('c', 2, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('d', 1, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('f', 5, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('g', 4, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('a', 2, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('b', 7, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('c', 8, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('d', 2, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('d', 4, new Rei(tabuleiro, Cor.PRETO));
 
     }
-       // tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
-    }
+    // tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
+}
