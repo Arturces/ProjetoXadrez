@@ -44,7 +44,7 @@ public class PartidaXadrez {
 
     private void validarOrigemPosicao(Posicao posicao) {
         if (!tabuleiro.existePeca(posicao)) {
-            throw new ExcecaoXadrez("Não existe peca na posição de origem");
+            throw new ExcecaoXadrez("Nao existe peca na posicao de origem");
         }
     }
 
@@ -53,18 +53,19 @@ public class PartidaXadrez {
     }
 
     private void configuracaoInicia() {
-        colocarPeca('b', 2, new Torre(tabuleiro, Cor.BRANCO));
-        colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
-        colocarPeca('a', 3, new Rei(tabuleiro, Cor.PRETO));
-        colocarPeca('c', 2, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('c', 1, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('c', 2, new Rei(tabuleiro, Cor.BRANCO));
         colocarPeca('d', 1, new Rei(tabuleiro, Cor.BRANCO));
-        colocarPeca('f', 5, new Torre(tabuleiro, Cor.PRETO));
-        colocarPeca('g', 4, new Rei(tabuleiro, Cor.BRANCO));
-        colocarPeca('a', 2, new Torre(tabuleiro, Cor.PRETO));
-        colocarPeca('b', 7, new Rei(tabuleiro, Cor.BRANCO));
-        colocarPeca('c', 8, new Torre(tabuleiro, Cor.BRANCO));
-        colocarPeca('d', 2, new Torre(tabuleiro, Cor.PRETO));
-        colocarPeca('d', 4, new Rei(tabuleiro, Cor.PRETO));
+        colocarPeca('d', 2, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+        colocarPeca('e', 2, new Rei(tabuleiro, Cor.BRANCO));
+
+        colocarPeca('c', 7, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('c', 8, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('d', 7, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('d', 8, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('e', 7, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('e', 8, new Torre(tabuleiro, Cor.PRETO));
 
     }
     // tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
