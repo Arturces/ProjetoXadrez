@@ -5,6 +5,8 @@ import PecasXadrez.Torre;
 import jogotabuleiro.Posicao;
 import jogotabuleiro.Tabuleiro;
 
+import java.awt.*;
+
 public class PartidaXadrez {
 
     private Tabuleiro tabuleiro;
@@ -29,10 +31,19 @@ public class PartidaXadrez {
 
 
     private void configuracaoInicia(){
-        colocarPeca('b', 6, new Torre(tabuleiro,Cor.BRANCO));
-        colocarPeca('e', 8, new Rei(tabuleiro,Cor.BRANCO));
-        colocarPeca('e', 1, new Rei(tabuleiro,Cor.PRETO));
+        colocarPeca('b', 2, new Torre(tabuleiro,Cor.BRANCO));
+        colocarPeca('e', 1, new Rei(tabuleiro,Cor.BRANCO));
+        colocarPeca('a', 3, new Rei(tabuleiro,Cor.PRETO));
+        colocarPeca('c', 2, new Torre(tabuleiro,Cor.BRANCO));
+        colocarPeca('d', 1, new Rei(tabuleiro,Cor.BRANCO));
+        colocarPeca('f', 5, new Torre(tabuleiro,Cor.PRETO));
+        colocarPeca('g', 4, new Rei(tabuleiro,Cor.BRANCO));
+        colocarPeca('a', 2, new Torre(tabuleiro,Cor.PRETO));
+        colocarPeca('b', 7, new Rei(tabuleiro,Cor.BRANCO));
+        colocarPeca('c', 8, new Torre(tabuleiro,Cor.BRANCO));
+        colocarPeca('d', 2, new Torre(tabuleiro,Cor.PRETO));
+        colocarPeca('d', 4, new Rei(tabuleiro,Cor.PRETO));
 
+    }
        // tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
     }
-}
