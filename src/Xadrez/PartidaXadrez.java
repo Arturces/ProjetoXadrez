@@ -8,12 +8,24 @@ import jogotabuleiro.Tabuleiro;
 
 public class PartidaXadrez {
 
+    private int turno;
+    private Cor jogadorAtual;
     private Tabuleiro  tabuleiro;
 
     public PartidaXadrez() {
         tabuleiro = new Tabuleiro(8, 8);
+        turno = 1;
+        jogadorAtual = Cor.BRANCO;
         configuracaoInicia();
     }
+
+    public int getTurno(){
+        return turno;
+    }
+    public Cor getJogadorAtual(){
+        return jogadorAtual;
+    }
+
 
     public PecaXadrez[][] getPecas() {
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
@@ -37,6 +49,7 @@ public class PartidaXadrez {
         validarOrigemPosicao(origem);
         validarDestinoPosicao(origem, destino);
         Peca capturarPeca = fazerMovimento(origem, destino);
+        proximoTurno();
         return (PecaXadrez) capturarPeca;
     }
 
@@ -51,16 +64,25 @@ public class PartidaXadrez {
         if (!tabuleiro.existePeca(posicao)) {
             throw new ExcecaoXadrez("Nao existe peca na posicao de origem");
         }
+        if(jogadorAtual !=((PecaXadrez) tabuleiro.peca(posicao)).getCor()){
+            throw new ExcecaoXadrez("A peca escolhida nao e sua");
+        }
         if (!tabuleiro.peca(posicao).existeAlgumMovimentoPossivel()) {
             throw new ExcecaoXadrez("Nao existe movimentos possiveis para a peca");
         }
     }
 
-    private void validarDestinoPosicao(Posicao origem, Posicao destino) {
+    private void  validarDestinoPosicao(Posicao origem, Posicao destino) {
         if (!tabuleiro.peca(origem).possivelMover(destino)) {
             throw new ExcecaoXadrez("A peca escolhida nao pode mover para o local de destino");
         }
     }
+    private void proximoTurno(){
+        turno++;
+        jogadorAtual = (jogadorAtual == Cor.BRANCO) ? Cor.PRETO : Cor.BRANCO; //condicional ternaria, se o jogador atual for igual a cor branca entao agora ele vai ser a cor preta caso contrario sera a cor branca.
+
+    }
+
     private void colocarPeca(char coluna, int linha, PecaXadrez peca) {
         tabuleiro.colocarPeca(peca, new PosicaoXadrez(coluna, linha).posicionar());
     }

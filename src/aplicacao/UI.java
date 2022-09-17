@@ -1,6 +1,7 @@
 package aplicacao;
 
 import Xadrez.Cor;
+import Xadrez.PartidaXadrez;
 import Xadrez.PecaXadrez;
 import Xadrez.PosicaoXadrez;
 
@@ -45,6 +46,13 @@ public class UI {
         }
     }
 
+    public static void printPartida(PartidaXadrez partidaXadrez){
+        printTabuleiro(partidaXadrez.getPecas());
+        System.out.println();
+        System.out.println("Turno: " + partidaXadrez.getTurno());
+        System.out.println("Aguardando jogador: " + partidaXadrez.getJogadorAtual());
+    }
+
     public static void printTabuleiro(PecaXadrez[][] pecas) {
         for (int i = 0; i < pecas.length; i++) {
             System.out.print((8 - i) + " ");
@@ -66,7 +74,6 @@ public class UI {
         }
         System.out.println("  a b c d e f g h");
     }
-
 
     private static void printPecas(PecaXadrez pecas, boolean planoFundo) {
         if(planoFundo){
