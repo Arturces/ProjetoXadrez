@@ -17,7 +17,7 @@ public abstract class Peca {
     public abstract boolean[][] possiveisMovimentos();
 
     public boolean possivelMover(Posicao posicao) { //metodo q faz gancho com o metodo subclasse
-        return possiveisMovimentos()[posicao.getFileira()][posicao.getFileira()];
+        return possiveisMovimentos()[posicao.getFileira()][posicao.getColuna()];
     }
 
     public boolean existeAlgumMovimentoPossivel() {
