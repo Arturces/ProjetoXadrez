@@ -8,7 +8,7 @@ import jogotabuleiro.Tabuleiro;
 
 public class PartidaXadrez {
 
-    private Tabuleiro tabuleiro;
+    private Tabuleiro  tabuleiro;
 
     public PartidaXadrez() {
         tabuleiro = new Tabuleiro(8, 8);
@@ -23,6 +23,12 @@ public class PartidaXadrez {
             }
         }
         return mat; //retono da matriz de peças da matriz de xadrez.
+    }
+
+    public boolean[][] possiveisMovimentos(PosicaoXadrez origemPosicao){
+        Posicao posicao = origemPosicao.posicionar();
+        validarOrigemPosicao(posicao);
+        return tabuleiro.peca(posicao).possiveisMovimentos();
     }
 
     public PecaXadrez moverPeca(PosicaoXadrez origemPosicao, PosicaoXadrez destinoPosicao) {
