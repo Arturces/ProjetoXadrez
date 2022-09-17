@@ -23,10 +23,16 @@ public class PartidaXadrez {
         }
         return mat; //retono da matriz de peças da matriz de xadrez.
     }
+        private void colocarPeca(char coluna, int linha, PecaXadrez peca){
+        tabuleiro.colocarPeca(peca,new PosicaoXadrez(coluna, linha).posicionar());
+        }
+
 
     private void configuracaoInicia(){
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.BRANCO), new Posicao(1, 1));
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(2, 2));
+        colocarPeca('b', 6, new Torre(tabuleiro,Cor.BRANCO));
+        colocarPeca('e', 8, new Rei(tabuleiro,Cor.BRANCO));
+        colocarPeca('e', 1, new Rei(tabuleiro,Cor.PRETO));
+
+       // tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO), new Posicao(0, 2));
     }
 }
