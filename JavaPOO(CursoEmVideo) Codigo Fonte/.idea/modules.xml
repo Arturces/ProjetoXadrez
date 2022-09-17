@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aula01/Aula01.iml" filepath="$PROJECT_DIR$/Aula01/Aula01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula05/Aula05.iml" filepath="$PROJECT_DIR$/Aula05/Aula05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula06/Aula06.iml" filepath="$PROJECT_DIR$/Aula06/Aula06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula07/Aula07.iml" filepath="$PROJECT_DIR$/Aula07/Aula07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula10Heranca/Aula10Heranca.iml" filepath="$PROJECT_DIR$/Aula10Heranca/Aula10Heranca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula11Heranca/Aula11Heranca.iml" filepath="$PROJECT_DIR$/Aula11Heranca/Aula11Heranca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Desafio/Desafio.iml" filepath="$PROJECT_DIR$/Desafio/Desafio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesafioVideo/DesafioVideo.iml" filepath="$PROJECT_DIR$/DesafioVideo/DesafioVideo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaPOO(CursoEmVideo) Codigo Fonte.iml" filepath="$PROJECT_DIR$/.idea/JavaPOO(CursoEmVideo) Codigo Fonte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Polimorfismo/Polimorfismo.iml" filepath="$PROJECT_DIR$/Polimorfismo/Polimorfismo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PolimorfismoSobreCarga/PolimorfismoSobreCarga.iml" filepath="$PROJECT_DIR$/PolimorfismoSobreCarga/PolimorfismoSobreCarga.iml" />
+    </modules>
+  </component>
+</project>
