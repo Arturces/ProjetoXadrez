@@ -22,7 +22,7 @@ public class Programa {
         List<PecaXadrez> capturada = new ArrayList<>();
 
         while (true) {
-            try {
+           try {
                 UI.clearScreen();
                 UI.printPartida(partidaXadrez, capturada);
                 System.out.println();
@@ -41,7 +41,7 @@ public class Programa {
                 if(capturarPeca != null){
                     capturada.add(capturarPeca);
                 }
-            } catch (ExcecaoXadrez e) {
+           } catch (ExcecaoXadrez e) {
                 System.out.println(e.getMessage());
                 entrada.nextLine();
             } catch (InputMismatchException e) {
