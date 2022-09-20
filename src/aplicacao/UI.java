@@ -48,14 +48,19 @@ public class UI {
         }
     }
 
-    public static void printPartida(PartidaXadrez partidaXadrez, List<PecaXadrez> capturada){
+    public static void printPartida(PartidaXadrez partidaXadrez, List<PecaXadrez> capturada) {
         printTabuleiro(partidaXadrez.getPecas());
         System.out.println();
         printCapturarPecas(capturada);
         System.out.println("Turno: " + partidaXadrez.getTurno());
-        System.out.println("Aguardando jogador: " + partidaXadrez.getJogadorAtual());
-        if(partidaXadrez.getCheck()){
-            System.out.println("CHECK");
+        if (!partidaXadrez.getCheckMate()) {
+            System.out.println("Aguardando jogador: " + partidaXadrez.getJogadorAtual());
+            if (partidaXadrez.getCheck()) {
+                System.out.println("CHECK");
+            }
+        } else {
+            System.out.println("CHECKMATE");
+            System.out.println("VENCEDOR: " + partidaXadrez.getJogadorAtual());
         }
     }
 
