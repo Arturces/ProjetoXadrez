@@ -1,9 +1,6 @@
 package Xadrez;
 
-import PecasXadrez.Bispo;
-import PecasXadrez.Peao;
-import PecasXadrez.Rei;
-import PecasXadrez.Torre;
+import PecasXadrez.*;
 import jogotabuleiro.Peca;
 import jogotabuleiro.Posicao;
 import jogotabuleiro.Tabuleiro;
@@ -189,10 +186,12 @@ public class PartidaXadrez {
 
     private void configuracaoInicia() {
         colocarPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('b', 1, new Cavalo(tabuleiro, Cor.BRANCO));
         colocarPeca('c', 1, new Bispo(tabuleiro, Cor.BRANCO));
         colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
         colocarPeca('f', 1, new Bispo(tabuleiro, Cor.BRANCO));
         colocarPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
+        colocarPeca('g', 1, new Cavalo(tabuleiro, Cor.BRANCO));
         colocarPeca('a', 2, new Peao(tabuleiro, Cor.BRANCO));
         colocarPeca('b', 2, new Peao(tabuleiro, Cor.BRANCO));
         colocarPeca('c', 2, new Peao(tabuleiro, Cor.BRANCO));
@@ -203,9 +202,11 @@ public class PartidaXadrez {
         colocarPeca('h', 2, new Peao(tabuleiro, Cor.BRANCO));
 
         colocarPeca('a', 8, new Torre(tabuleiro, Cor.PRETO));
+        colocarPeca('b', 8 , new Cavalo(tabuleiro, Cor.PRETO));
         colocarPeca('c', 8, new Bispo(tabuleiro, Cor.PRETO));
         colocarPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
         colocarPeca('f', 8, new Bispo(tabuleiro, Cor.PRETO));
+        colocarPeca('g', 8, new Cavalo(tabuleiro, Cor.PRETO));
         colocarPeca('h', 8, new Torre(tabuleiro, Cor.PRETO));
         colocarPeca('a', 7, new Peao(tabuleiro, Cor.PRETO));
         colocarPeca('b', 7, new Peao(tabuleiro, Cor.PRETO));
