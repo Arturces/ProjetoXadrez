@@ -48,7 +48,6 @@ public class PartidaXadrez {
         return enPassant;
     }
 
-
     public PecaXadrez[][] getPecas() {
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
         for (int i = 0; i < tabuleiro.getLinhas(); i++) {
@@ -77,7 +76,7 @@ public class PartidaXadrez {
             throw new ExcecaoXadrez("Voce nao pode se colocar em check");
         }
 
-        PecaXadrez pecaMovida = (PecaXadrez) tabuleiro.peca(destino);
+        PecaXadrez pecaMovida = (PecaXadrez)tabuleiro.peca(destino);
 
         check = (testeCheck(oponente(jogadorAtual))) ? true : false;
 
@@ -88,7 +87,7 @@ public class PartidaXadrez {
         }
 
         // Movimento Especial En pssant
-        if (pecaMovida instanceof Peao && (destino.getColuna() == origem.getColuna() - 2 || destino.getColuna() == origem.getColuna() + 2)) {
+        if (pecaMovida instanceof Peao && (destino.getFileira() == origem.getFileira() - 2 || destino.getFileira() == origem.getFileira() + 2)) {
             enPassant = pecaMovida;
         } else {
             enPassant = null;
@@ -123,14 +122,13 @@ public class PartidaXadrez {
         }
 
         //Movimento especial En Passant
-        if( p instanceof Peao){
-            if(origem.getColuna() != destino.getColuna() && pecasCapturadas == null){
+        if (p instanceof Peao) {
+            if (origem.getColuna() != destino.getColuna() && capturarPeca == null) {
                 Posicao peaoPosicao;
-                if(p.getCor() == Cor.BRANCO) {
-                    peaoPosicao = new Posicao(destino.getColuna() + 1, destino.getColuna());
-                }
-                else {
-                    peaoPosicao = new Posicao(destino.getColuna() -1, destino.getColuna());
+                if (p.getCor() == Cor.BRANCO) {
+                    peaoPosicao = new Posicao(destino.getFileira() + 1, destino.getColuna());
+                } else {
+                    peaoPosicao = new Posicao(destino.getFileira() - 1, destino.getColuna());
                 }
                 capturarPeca = tabuleiro.removerPeca(peaoPosicao);
                 pecasCapturadas.add(capturarPeca);
@@ -169,19 +167,16 @@ public class PartidaXadrez {
         }
 
         //Movimento especial En Passant
-        if( p instanceof Peao){
-            if(origem.getColuna() != destino.getColuna() && pecasCapturadas == enPassant){
+        if (p instanceof Peao) {
+            if (origem.getColuna() != destino.getColuna() && pecasCapturadas == enPassant) {
                 PecaXadrez peao = (PecaXadrez)tabuleiro.removerPeca(destino);
                 Posicao peaoPosicao;
-                if(p.getCor() == Cor.BRANCO) {
-                    peaoPosicao = new Posicao(destino.getColuna() + 1, destino.getColuna());
+                if (p.getCor() == Cor.BRANCO) {
+                    peaoPosicao = new Posicao(3, destino.getColuna());
+                } else {
+                    peaoPosicao = new Posicao(4, destino.getColuna());
                 }
-                else {
-                    peaoPosicao = new Posicao(destino.getColuna() -1, destino.getColuna());
-                }
-                capturarPeca = tabuleiro.removerPeca(peaoPosicao);
-                pecasCapturadas.add(capturarPeca);
-                pecasNoTabuleiro.remove(capturarPeca);
+                tabuleiro.colocarPeca(peao, peaoPosicao);
             }
 
         }

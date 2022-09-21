@@ -43,12 +43,11 @@ public class Peao extends PecaXadrez {
             // Movimento Especial en Passant Branco
             if (posicao.getFileira() == 3) {
                 Posicao esquerda = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
-
                 if (getTabuleiro().existePosicao(esquerda) && existePecaOponete(esquerda) && getTabuleiro().peca(esquerda) == partidaXadrez.getEnPassant()) {
                     mat[esquerda.getFileira() - 1][esquerda.getColuna()] = true;
                 }
                 // Movimento Especial en Passant Branco
-                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() + 1);
                 if (getTabuleiro().existePosicao(direita) && existePecaOponete(direita) && getTabuleiro().peca(direita) == partidaXadrez.getEnPassant()) {
                     mat[direita.getFileira() - 1][direita.getColuna()] = true;
                 }
@@ -74,14 +73,14 @@ public class Peao extends PecaXadrez {
                 mat[p.getFileira()][p.getColuna()] = true;
             }
 
-            // Movimento Especial en Passant Branco
+            // Movimento Especial en Passant PRETO
             if (posicao.getFileira() == 4) {
                 Posicao esquerda = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
                 if (getTabuleiro().existePosicao(esquerda) && existePecaOponete(esquerda) && getTabuleiro().peca(esquerda) == partidaXadrez.getEnPassant()) {
                     mat[esquerda.getFileira() + 1][esquerda.getColuna()] = true;
                 }
-                // Movimento Especial en Passant Branco
-                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+                // Movimento Especial en Passant PRETO
+                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() + 1);
                 if (getTabuleiro().existePosicao(direita) && existePecaOponete(direita) && getTabuleiro().peca(direita) == partidaXadrez.getEnPassant()) {
                     mat[direita.getFileira() + 1][direita.getColuna()] = true;
                 }
