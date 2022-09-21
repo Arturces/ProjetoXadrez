@@ -1,14 +1,18 @@
 package PecasXadrez;
 
 import Xadrez.Cor;
+import Xadrez.PartidaXadrez;
 import Xadrez.PecaXadrez;
 import jogotabuleiro.Posicao;
 import jogotabuleiro.Tabuleiro;
 
 public class Peao extends PecaXadrez {
 
-    public Peao(Tabuleiro tabuleiro, Cor cor) {
+    private PartidaXadrez partidaXadrez;
+
+    public Peao(Tabuleiro tabuleiro, Cor cor, PartidaXadrez partidaXadrez) {
         super(tabuleiro, cor);
+        this.partidaXadrez = partidaXadrez;
     }
 
     @Override
@@ -36,6 +40,20 @@ public class Peao extends PecaXadrez {
                 mat[p.getFileira()][p.getColuna()] = true;
             }
 
+            // Movimento Especial en Passant Branco
+            if (posicao.getFileira() == 3) {
+                Posicao esquerda = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+
+                if (getTabuleiro().existePosicao(esquerda) && existePecaOponete(esquerda) && getTabuleiro().peca(esquerda) == partidaXadrez.getEnPassant()) {
+                    mat[esquerda.getFileira() - 1][esquerda.getColuna()] = true;
+                }
+                // Movimento Especial en Passant Branco
+                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+                if (getTabuleiro().existePosicao(direita) && existePecaOponete(direita) && getTabuleiro().peca(direita) == partidaXadrez.getEnPassant()) {
+                    mat[direita.getFileira() - 1][direita.getColuna()] = true;
+                }
+            }
+
         } else {
 
             p.setValor(posicao.getFileira() + 1, posicao.getColuna());
@@ -56,6 +74,18 @@ public class Peao extends PecaXadrez {
                 mat[p.getFileira()][p.getColuna()] = true;
             }
 
+            // Movimento Especial en Passant Branco
+            if (posicao.getFileira() == 4) {
+                Posicao esquerda = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+                if (getTabuleiro().existePosicao(esquerda) && existePecaOponete(esquerda) && getTabuleiro().peca(esquerda) == partidaXadrez.getEnPassant()) {
+                    mat[esquerda.getFileira() + 1][esquerda.getColuna()] = true;
+                }
+                // Movimento Especial en Passant Branco
+                Posicao direita = new Posicao(posicao.getFileira(), posicao.getColuna() - 1);
+                if (getTabuleiro().existePosicao(direita) && existePecaOponete(direita) && getTabuleiro().peca(direita) == partidaXadrez.getEnPassant()) {
+                    mat[direita.getFileira() + 1][direita.getColuna()] = true;
+                }
+            }
         }
         return mat;
     }
