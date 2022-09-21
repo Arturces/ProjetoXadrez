@@ -87,7 +87,7 @@ public class PartidaXadrez {
         Peca capturarPeca = tabuleiro.removerPeca(destino);
         tabuleiro.colocarPeca(p, destino);
         if (capturarPeca != null) {
-            pecasNoTabuleiro.remove(capturarPeca);
+             pecasNoTabuleiro.remove(capturarPeca);
             pecasCapturadas.add(capturarPeca);
         }
         return capturarPeca;
@@ -188,6 +188,7 @@ public class PartidaXadrez {
         colocarPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
         colocarPeca('b', 1, new Cavalo(tabuleiro, Cor.BRANCO));
         colocarPeca('c', 1, new Bispo(tabuleiro, Cor.BRANCO));
+        colocarPeca('d', 1, new Rainha(tabuleiro, Cor.BRANCO));
         colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
         colocarPeca('f', 1, new Bispo(tabuleiro, Cor.BRANCO));
         colocarPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
@@ -204,6 +205,7 @@ public class PartidaXadrez {
         colocarPeca('a', 8, new Torre(tabuleiro, Cor.PRETO));
         colocarPeca('b', 8 , new Cavalo(tabuleiro, Cor.PRETO));
         colocarPeca('c', 8, new Bispo(tabuleiro, Cor.PRETO));
+        colocarPeca('d', 8, new Rainha(tabuleiro, Cor.PRETO));
         colocarPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
         colocarPeca('f', 8, new Bispo(tabuleiro, Cor.PRETO));
         colocarPeca('g', 8, new Cavalo(tabuleiro, Cor.PRETO));
