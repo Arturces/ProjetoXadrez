@@ -41,6 +41,13 @@ public class Programa {
                 if(capturarPeca != null){
                     capturada.add(capturarPeca);
                 }
+
+                if (partidaXadrez.getPromoted() != null){
+                    System.out.println("Entre com a peca promovida (C/T/Q/B): ");
+                    String type = entrada.nextLine();
+                    partidaXadrez.substituirPromotedPeca(type);
+                }
+
            } catch (ExcecaoXadrez e) {
                 System.out.println(e.getMessage());
                 entrada.nextLine();
