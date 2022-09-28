@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1b877f7-3b0c-424c-baec-b043975b3481" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+    <list default="true" id="b1b877f7-3b0c-424c-baec-b043975b3481" name="Changes" comment="&quot;Primeiro Projeto&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../jsoftwarebrasil-sgf-api" beforeDir="false" afterPath="$PROJECT_DIR$/../jsoftwarebrasil-sgf-api" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../untitled" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled" afterDir="false" />
     </list>
@@ -13,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,8 +56,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664403645247</updated>
-      <workItem from="1664403647968" duration="318000" />
+      <workItem from="1664403647968" duration="1123000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;Primeiro Projeto&quot;">
+      <created>1664404276011</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664404276011</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Primeiro Projeto&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Primeiro Projeto&quot;" />
   </component>
 </project>
